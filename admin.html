@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - MedConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+
+    <nav class="bg-blue-600 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-white text-xl font-bold">MedConnect</h1>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="doctors.html" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Doctors</a>
+                        <a href="admin.html" class="text-white px-3 py-2 rounded-md text-sm font-medium bg-blue-700">Admin</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-white p-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="doctors.html" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Doctors</a>
+                <a href="admin.html" class="text-white block px-3 py-2 rounded-md text-base font-medium bg-blue-800">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="loginForm" class="min-h-screen flex items-center justify-center">
+        <div class="max-w-md w-full space-y-8 p-8">
+            <div>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Admin Access</h2>
+                <p class="mt-2 text-center text-sm text-gray-600">Enter admin password to continue</p>
+            </div>
+            <form id="loginFormElement" class="mt-8 space-y-6" novalidate>
+                <div>
+                    <label for="adminPassword" class="sr-only">Password</label>
+                    <input id="adminPassword" type="password" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                        placeholder="Admin Password">
+                    <p class="text-red-500 text-sm mt-2 hidden" id="passwordError">Incorrect password</p>
+                </div>
+                <div>
+                    <button type="submit" id="loginBtn" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                            <i class="fas fa-lock text-blue-500 group-hover:text-blue-400"></i>
+                        </span>
+                        Sign In
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="adminPanel" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 hidden">
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Admin Panel</h1>
+                    <p class="text-gray-600 mt-1">Manage appointments and view system status</p>
+                </div>
+                <button id="logoutBtn" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition duration-300">
+                    <i class="fas fa-sign-out-alt mr-2"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-600">Total Appointments</p>
+                        <p id="totalAppointments" class="text-2xl font-bold text-gray-900">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="bg-green-100 p-3 rounded-lg">
+                        <i class="fas fa-user-md text-green-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-600">Total Doctors</p>
+                        <p id="totalDoctors" class="text-2xl font-bold text-gray-900">0</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="bg-yellow-100 p-3 rounded-lg">
+                        <i class="fas fa-clock text-yellow-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-600">Today's Appointments</p>
+                        <p id="todayAppointments" class="text-2xl font-bold text-gray-900">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bg-white rounded-lg shadow-md">
+            <div class="p-6 border-b border-gray-200">
+                <h2 class="text-xl font-semibold text-gray-900">All Appointments</h2>
+            </div>
+
+
+            <div id="appointmentsLoading" class="p-8 text-center">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                <p class="text-gray-600">Loading appointments...</p>
+            </div>
+
+
+            <div id="appointmentsTable" class="overflow-x-auto hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Patient</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Doctor</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & Time</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Booked On</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentsTableBody" class="bg-white divide-y divide-gray-200">
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div id="noAppointments" class="p-8 text-center hidden">
+                <i class="fas fa-calendar-times text-gray-400 text-4xl mb-4"></i>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">No appointments found</h3>
+                <p class="text-gray-600">Appointments will appear here once patients start booking.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/firebase.js"></script>
+    <script src="/admin.js"></script>
+
+</body>
+
+</html>
