@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - MedConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-white text-xl font-bold">MedConnect</h1>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="doctors.html" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Doctors</a>
+                        <a href="admin.html" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Admin</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-white p-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="doctors.html" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Doctors</a>
+                <a href="admin.html" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="bg-white shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex items-center">
+                <a href="doctors.html" class="text-blue-600 hover:text-blue-800 mr-4">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Book Appointment</h1>
+                    <p class="text-gray-600 mt-1">Schedule your appointment with the doctor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="loadingState" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p class="text-gray-600">Loading appointment form...</p>
+        </div>
+    </div>
+
+
+    <div id="appointmentForm" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 hidden">
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">Booking appointment with:</h2>
+            <div class="flex items-center">
+                <img id="doctorPhoto" class="h-16 w-16 rounded-full object-cover" src="" alt="Doctor Photo">
+                <div class="ml-4">
+                    <h3 id="doctorName" class="text-xl font-semibold text-gray-900"></h3>
+                    <p id="doctorSpecialization" class="text-blue-600"></p>
+                    <p id="doctorBranch" class="text-gray-600 text-sm"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Patient Information</h2>
+
+            <form id="bookingForm" class="space-y-6">
+                <input type="hidden" id="doctorId" name="doctorId">
+
+                <div>
+                    <label for="patientName" class="block text-sm font-medium text-gray-700 mb-2">Patient Name *</label>
+                    <input type="text" id="patientName" name="patientName" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <p class="text-red-500 text-sm mt-1 hidden" id="patientNameError">Please enter patient name</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="contactNumber" class="block text-sm font-medium text-gray-700 mb-2">Contact Number *</label>
+                        <input type="tel" id="contactNumber" name="contactNumber" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="contactNumberError">Please enter a valid contact number</p>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="emailError">Please enter a valid email address</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="preferredDate" class="block text-sm font-medium text-gray-700 mb-2">Preferred Date *</label>
+                        <input type="date" id="preferredDate" name="preferredDate" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="preferredDateError">Please select a future date</p>
+                    </div>
+
+                    <div>
+                        <label for="preferredTime" class="block text-sm font-medium text-gray-700 mb-2">Preferred Time *</label>
+                        <input type="time" id="preferredTime" name="preferredTime" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="preferredTimeError">Please select a time</p>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">Additional Notes (Optional)</label>
+                    <textarea id="notes" name="notes" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Any specific concerns or requirements..."></textarea>
+                </div>
+
+                <div class="flex justify-end space-x-4">
+                    <button type="button" onclick="window.history.back()" class="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition duration-300">
+                        Cancel
+                    </button>
+                    <button type="submit" id="submitBtn" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <span id="submitText">Book Appointment</span>
+                        <i id="submitSpinner" class="fas fa-spinner fa-spin ml-2 hidden"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="errorState" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 hidden">
+        <div class="text-center">
+            <i class="fas fa-exclamation-triangle text-red-500 text-4xl mb-4"></i>
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Unable to Load Form</h2>
+            <p class="text-gray-600 mb-6">There was an error loading the appointment form.</p>
+            <a href="doctors.html" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Doctors
+            </a>
+        </div>
+    </div>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/appointment.js"></script>
+</body>
+
+</html>
