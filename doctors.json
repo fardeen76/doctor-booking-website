@@ -1,0 +1,163 @@
+[{
+        "id": "doc1",
+        "name": "Dr. Alice Smith",
+        "specialization": "Cardiologist",
+        "branch": "Downtown Clinic",
+        "qualifications": "MBBS, MD (Cardiology)",
+        "availability": "Mon-Fri, 9AM - 5PM",
+        "photoURL": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=764&auto=format&fit=crop"
+    },
+    {
+        "id": "doc2",
+        "name": "Dr. Bob Johnson",
+        "specialization": "Dermatologist",
+        "branch": "Uptown Medical Center",
+        "qualifications": "MBBS, MD (Dermatology)",
+        "availability": "Tue-Thu, 10AM - 4PM",
+        "photoURL": "https://images.unsplash.com/photo-1637059824899-a441006a6875?q=80&w=752&auto=format&fit=crop"
+    },
+    {
+        "id": "doc3",
+        "name": "Dr. Clara Williams",
+        "specialization": "Pediatrician",
+        "branch": "Westside Hospital",
+        "qualifications": "MBBS, DCH",
+        "availability": "Mon-Sat, 8AM - 2PM",
+        "photoURL": "https://plus.unsplash.com/premium_photo-1661766718556-13c2efac1388?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc4",
+        "name": "Dr. David Brown",
+        "specialization": "Neurologist",
+        "branch": "East Health Center",
+        "qualifications": "MBBS, DM (Neurology)",
+        "availability": "Wed-Fri, 1PM - 6PM",
+        "photoURL": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=764&auto=format&fit=crop"
+    },
+    {
+        "id": "doc5",
+        "name": "Dr. Emily Clark",
+        "specialization": "Gynecologist",
+        "branch": "Central Medical Plaza",
+        "qualifications": "MBBS, MS (OBG)",
+        "availability": "Mon-Fri, 10AM - 4PM",
+        "photoURL": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc6",
+        "name": "Dr. Abdul Basit",
+        "specialization": "Orthopedic",
+        "branch": "Downtown Clinic",
+        "qualifications": "MBBS, MS (Ortho)",
+        "availability": "Mon-Sat, 9AM - 1PM",
+        "photoURL": "https://images.unsplash.com/photo-1637059824899-a441006a6875?q=80&w=752&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc7",
+        "name": "Dr. Grace Wilson",
+        "specialization": "Psychiatrist",
+        "branch": "Uptown Wellness Center",
+        "qualifications": "MBBS, MD (Psychiatry)",
+        "availability": "Tue-Fri, 11AM - 5PM",
+        "photoURL": "https://plus.unsplash.com/premium_photo-1661578535048-7a30e3a71d25?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc8",
+        "name": "Dr. Henry Lee",
+        "specialization": "General Physician",
+        "branch": "Community Hospital",
+        "qualifications": "MBBS",
+        "availability": "Daily, 9AM - 9PM",
+        "photoURL": "https://plus.unsplash.com/premium_photo-1723514536306-26fe5c4adeb7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc9",
+        "name": "Dr. Isabella Davis",
+        "specialization": "Endocrinologist",
+        "branch": "Metro Health Center",
+        "qualifications": "MBBS, DM (Endocrinology)",
+        "availability": "Mon-Wed, 2PM - 6PM",
+        "photoURL": "https://plus.unsplash.com/premium_photo-1661764895266-f0b195221b77?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fG1hbGUlMjBkb2N0b3IlMjBwaWN0dXJlc3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "id": "doc10",
+        "name": "Dr. Jack Thomas",
+        "specialization": "Ophthalmologist",
+        "branch": "VisionCare Hospital",
+        "qualifications": "MBBS, MS (Ophthalmology)",
+        "availability": "Tue-Sat, 10AM - 3PM",
+        "photoURL": "https://images.unsplash.com/photo-1678940805950-73f2127f9d4e?q=80&w=685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc11",
+        "name": "Dr. Karen White",
+        "specialization": "Dentist",
+        "branch": "Smile Dental Clinic",
+        "qualifications": "BDS, MDS",
+        "availability": "Mon-Fri, 9AM - 5PM",
+        "photoURL": "https://plus.unsplash.com/premium_photo-1661745981779-0453d5f66531?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc12",
+        "name": "Dr. Saif Nizad",
+        "specialization": "Radiologist",
+        "branch": "Central Diagnostics",
+        "qualifications": "MBBS, MD (Radiology)",
+        "availability": "Mon-Sat, 8AM - 12PM",
+        "photoURL": "https://images.unsplash.com/photo-1659353888101-6e53e32515fe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc13",
+        "name": "Dr. Akhi Sultana",
+        "specialization": "Pulmonologist",
+        "branch": "Airway Hospital",
+        "qualifications": "MBBS, MD (Pulmonology)",
+        "availability": "Wed-Sat, 10AM - 4PM",
+        "photoURL": "https://plus.unsplash.com/premium_photo-1664475543697-229156438e1e?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc14",
+        "name": "Dr. Noah Ferdous",
+        "specialization": "Nephrologist",
+        "branch": "Kidney Care Center",
+        "qualifications": "MBBS, DM (Nephrology)",
+        "availability": "Mon-Fri, 1PM - 6PM",
+        "photoURL": "https://images.unsplash.com/photo-1659353888906-adb3e0041693?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc15",
+        "name": "Dr. Olivia Hall",
+        "specialization": "Oncologist",
+        "branch": "Cancer Research Hospital",
+        "qualifications": "MBBS, MD (Oncology)",
+        "availability": "Tue-Fri, 9AM - 3PM",
+        "photoURL": "https://plus.unsplash.com/premium_photo-1661341423936-40b48564a5bf?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc16",
+        "name": "Dr. Paul Young",
+        "specialization": "Gastroenterologist",
+        "branch": "Digestive Care Center",
+        "qualifications": "MBBS, MD (Gastroenterology)",
+        "availability": "Mon-Wed, 10AM - 2PM",
+        "photoURL": "https://plus.unsplash.com/premium_photo-1661722609696-bf0379033f0e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc17",
+        "name": "Dr. Md Hisham",
+        "specialization": "ENT Specialist",
+        "branch": "Ear Nose Throat Center",
+        "qualifications": "MBBS, MS (ENT)",
+        "availability": "Mon-Fri, 11AM - 5PM",
+        "photoURL": "https://images.unsplash.com/photo-1645066928295-2506defde470?q=80&w=679&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "doc18",
+        "name": "Dr. Riley King",
+        "specialization": "Urologist",
+        "branch": "City Hospital",
+        "qualifications": "MBBS, MS (Urology)",
+        "availability": "Tue-Thu, 9AM - 1PM",
+        "photoURL": "https://media.istockphoto.com/id/1365402725/photo/successful-male-doctor-smiles-and-looks-at-the-camera-in-the-clinic.webp?s=1024x1024&w=is&k=20&c=BQ0Lr8L8RO3b5O_dr8rPO_Kg9onRukuO0El9MLTabjU="
+    }
+]
