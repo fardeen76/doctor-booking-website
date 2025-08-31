@@ -39,11 +39,11 @@ async function loadDoctorProfile() {
         doctorProfile.classList.add('hidden');
         errorState.classList.add('hidden');
 
-        // Fetch local doctors.json
+        
         const response = await fetch('./doctors.json');
         const doctors = await response.json();
 
-        // Find the doctor by ID
+      
         const doctor = doctors.find(d => d.id === doctorId);
 
         if (doctor) {
@@ -101,4 +101,5 @@ function showErrorState() {
     loadingState.classList.add('hidden');
     doctorProfile.classList.add('hidden');
     errorState.classList.remove('hidden');
+
 }
